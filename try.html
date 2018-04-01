@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        body {
+            padding: 0;
+            margin: 0;
+        }
+        #nav {
+            list-style-type: none;
+            float: right;
+            padding: 0;
+            margin: 0;
+            z-index: 0;
+            padding-top: 30px;
+
+        }
+
+        #nav li {
+            width: 220px;
+            height: 40px;
+            line-height: 40px;;
+            /*background-color: #569e04;*/
+            background-color: #010101;
+            border-bottom: 1px solid #999999;
+            text-align: center;
+            color: white;
+            font-size: 14px;
+            margin-right: 20px;
+            cursor: pointer;
+        }
+        #nav .now{
+            background-color: #569e04;
+        }
+        #pic {
+            width: 640px;
+            list-style-type: none;
+            height: 480px;
+            padding: 0;
+            margin: 0;
+            position: absolute;
+            top: 0;
+            z-index: -1;
+            /*display: none;*/
+            overflow: hidden;
+        }
+
+    </style>
+</head>
+<body>
+<div class="nav">
+    <ul id="nav">
+        <li onmousemove="fun('0')" class="now">春</li>
+        <li onmousemove="fun('1')">はる</li>
+        <li onmousemove="fun('2')">ハル</li>
+        <li onmousemove="fun('3')">好き</li>
+        <li onmousemove="fun('4')">大好き</li>
+        <li onmousemove="fun('5')">笑う</li>
+        <li onmousemove="fun('6')">あい</li>
+        <li onmousemove="fun('7')">あいしてる</li>
+    </ul>
+    <div id="pic">
+        <div><img src="images/1.jpg"></div>
+        <div><img src="images/2.jpg"></div>
+        <div><img src="images/3.jpg"></div>
+        <div><img src="images/4.jpg"></div>
+        <div><img src="images/5.jpg"></div>
+        <div><img src="images/6.jpg"></div>
+        <div><img src="images/7.jpg"></div>
+        <div><img src="images/8.jpg"></div>
+    </div>1.jpg
+</div>
+<script>
+    var nav = document.getElementById("nav").getElementsByTagName("li");
+    var navshow = document.getElementById("pic").getElementsByTagName("div");
+    function fun(num) {
+        for (var n = 0; n < nav.length; n++) {
+            nav[n].className="";
+        }
+        nav[num].className="now";
+
+        for(var m=0;m<navshow.length;m++){
+            navshow[m].style.display="none";
+        }
+        navshow[num].style.display="block";
+    }
+
+</script>
+</body>
+</html>
